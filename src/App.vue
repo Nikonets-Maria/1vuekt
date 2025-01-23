@@ -33,7 +33,15 @@ export default {
         completed: false
       });
     },
+    // changeTodos(id){ 
+    //     console.log('changeTodos'+id) 
+    //     let findTodo = this.start_todos.find(todo => todo.id === id) 
+    //     findTodo.completed != findTodo.completed 
+    //   }, 
     changeTodos(id) {
+      // let findTodo = this.start_todos.find(todo => todo.id === id)
+      // findTodo.completed != todo.completed 
+
       this.start_todos = this.start_todos.map(todo => {
         if (todo.id === id) {
           return { ...todo, completed: !todo.completed };

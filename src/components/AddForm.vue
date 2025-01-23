@@ -1,6 +1,6 @@
 <template>
     <div class="input_elem">
-      <input v-on:keyup.enter="addTodo" v-model="title" />
+      <input v-on:keyup.enter="addTodo" :value ="title" @input="handleInput"/>
     </div>
   </template>
   
@@ -12,6 +12,9 @@
         this.$emit('addTodo', this.title);
         this.title = '';
       },
+      handleInput(){
+        this.title = event.target.value;
+      }
     },
     data() {
       return {
